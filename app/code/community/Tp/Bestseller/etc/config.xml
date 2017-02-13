@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Tp_Bestseller>
+            <version>1.0.0</version>
+        </Tp_Bestseller>
+    </modules>
+    <global>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product_list_toolbar>Tp_Bestseller_Block_Product_List_Toolbar</product_list_toolbar>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <models>
+            <catalog>
+                <rewrite>
+                    <config>Tp_Bestseller_Model_Config</config>
+                </rewrite>
+            </catalog>
+            <bestseller>
+                <class>Tp_Bestseller_Model</class>
+            </bestseller>
+            <adminhtml>
+                <rewrite>
+                    <system_config_source_catalog_listSort>
+                        Tp_Bestseller_Model_Adminhtml_System_Config_Source_Catalog_ListSort
+                    </system_config_source_catalog_listSort>
+                </rewrite>
+            </adminhtml>
+        </models>
+        <resources>
+            <bestseller_setup>
+                <setup>
+                    <module>Tp_Bestseller</module>
+                    <class>Tp_Bestseller_Model_Mysql4_Setup</class>
+                </setup>
+            </bestseller_setup>
+        </resources>
+    </global>
+    <crontab>
+        <jobs>
+            <tp_bestseller_update>
+                <schedule>
+                    <cron_expr>* 18 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>bestseller/observer::updateBestseller</model>
+                </run>
+            </tp_bestseller_update>
+        </jobs>
+    </crontab>
+</config>

@@ -1,0 +1,20 @@
+{
+  "name": "tp/bestseller",
+  "description": "Sort Products by best selling in magento category layout",
+  "type": "project",
+  "version": "1.0.0",
+  "keywords": [
+    "magento"
+  ],
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Jan Gantzert",
+      "email": "jgantzert@template-provider.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.0"
+  }
+}
