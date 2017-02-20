@@ -43,7 +43,7 @@
         <jobs>
             <tp_bestseller_update>
                 <schedule>
-                    <cron_expr>* 18 * * *</cron_expr>
+                    <cron_expr>0 0 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>bestseller/observer::updateBestseller</model>
